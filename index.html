@@ -1,20 +1,27 @@
-<label for="imageInput">選擇上傳方式：</label>
-<select onchange="toggleCapture(this.value)">
-  <option value="photo">拍照</option>
-  <option value="upload">上傳</option>
+<label for="mode">選擇上傳方式：</label>
+<select id="mode" onchange="switchMode()">
+  <option value="photo">📷 拍照</option>
+  <option value="upload">📁 上傳相簿圖片</option>
 </select>
 
-<input type="file" id="imageInput" accept="image/*">
+<!-- 拍照用（只允許拍一張） -->
+<input type="file" id="photoInput" accept="image/*" capture="environment" style="display: block;">
+
+<!-- 上傳用（可多選） -->
+<input type="file" id="uploadInput" accept="image/*" multiple style="display: none;">
 
 <script>
-function toggleCapture(mode) {
-  const input = document.getElementById("imageInput");
+function switchMode() {
+  const mode = document.getElementById("mode").value;
+  const photo = document.getElementById("photoInput");
+  const upload = document.getElementById("uploadInput");
+
   if (mode === "photo") {
-    input.setAttribute("capture", "environment");
-    input.removeAttribute("multiple");
+    photo.style.display = 'block';
+    upload.style.display = 'none';
   } else {
-    input.removeAttribute("capture");
-    input.setAttribute("multiple", "");
+    photo.style.display = 'none';
+    upload.style.display = 'block';
   }
 }
 </script>
