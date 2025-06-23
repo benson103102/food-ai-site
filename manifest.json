@@ -1,0 +1,20 @@
+{
+  "name": "智慧飲食辨識系統",
+  "short_name": "飲食辨識",
+  "start_url": "index2.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "2000*2000",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "2000*2000",
+      "type": "image/png"
+    }
+  ]
+}
